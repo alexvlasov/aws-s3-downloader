@@ -20,9 +20,14 @@ if __name__ == "__main__":
         else:
             output_folder = '{cur_dir}/{bucket_name}'.format(cur_dir=os.path.dirname(os.path.realpath(__file__)),bucket_name=args.bucket_name)
 
+        if args.url:
+            url = args.url
+        else:
+            url="http://{bucket_name}.s3.amazonaws.com/".format(bucket_name=args.bucket_name)
+
         bucket = Bucket(
                              bucket_name=args.bucket_name,
-                             url="http://{bucket_name}.s3.amazonaws.com/".format(bucket_name=args.bucket_name),
+                             url=url,
                              download=args.download,
                              download_include=args.download_include,
                              download_exclude=args.download_exclude,

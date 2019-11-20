@@ -85,5 +85,12 @@ parser.add_argument(
                     help="Don't print updates",
                    )
 
+parser.add_argument(
+                    '-u',
+                    '--url',
+                    required=False, 
+                    help="Bucket URL",
+                   )
+
 
 args = parser.parse_args()
